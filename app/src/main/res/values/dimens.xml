@@ -1,0 +1,4 @@
+<!-- res/values/dimens.xml -->
+<resources>
+    <dimen name="item_space">8dp</dimen> <!-- Defina o valor do espaçamento desejado -->
+</resources>

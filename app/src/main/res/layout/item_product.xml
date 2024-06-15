@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/border"
+    android:padding="6dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="2dp"
+        tools:ignore="UselessParent">
+
+        <TextView
+            android:id="@+id/productName"
+            android:layout_width="157dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Produto"
+            android:textSize="14sp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/productQuantity"
+            android:layout_width="25dp"
+            android:layout_height="24dp"
+            android:text="0"
+            android:textSize="11sp"
+            tools:ignore="HardcodedText,RtlHardcoded" />
+
+        <TextView
+            android:id="@+id/productPriceCalculation"
+            android:layout_width="61dp"
+            android:layout_height="24dp"
+            android:text="0.00"
+            android:textSize="11sp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/productPriceTotal"
+            android:layout_width="79dp"
+            android:layout_height="24dp"
+            android:text="0.00"
+            android:textSize="11sp"
+            tools:ignore="HardcodedText" />
+
+        <ImageView
+            android:id="@+id/editButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="4dp"
+            android:contentDescription="Edit"
+            android:src="@drawable/ic_edit" />
+
+        <ImageView
+            android:id="@+id/deleteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="4dp"
+            android:contentDescription="Delete"
+            android:src="@drawable/ic_delete" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="399dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:orientation="horizontal"
+        tools:ignore="UselessParent">
+
+    </LinearLayout>
+</LinearLayout>
