@@ -83,13 +83,16 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.itemOrdenar) {
             sortListAlphabetically(); // Chama a função para ordenar a lista
             Toast.makeText(MainActivity.this, "Lista Ordenada", Toast.LENGTH_LONG).show();
-        } else if (id == R.id.itemCompartilhar) {
+        } else if (id == R.id.itemCompartilharApp) {
             Intent shareIntent = new Intent(Intent.ACTION_SEND);
             shareIntent.setType("text/plain");
             shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Compartilhar App");
             shareIntent.putExtra(Intent.EXTRA_TEXT, "Veja este aplicativo incrível: https://drive.google.com/file/d/19B-0q0SGSVBsKiC2NyicbdSDaE40IBd4/view?usp=sharing");
             startActivity(Intent.createChooser(shareIntent, "Compartilhar via"));
-        } else if (id == R.id.itemSobre) {
+        }  else if (id == R.id.itemCompartilharLista) {
+            shareListViaWhatsApp(); // Chama a função para compartilhar a lista via WhatsApp
+        }
+        else if (id == R.id.itemSobre) {
             showAboutDialog();
         } else {
             return super.onOptionsItemSelected(item);
@@ -107,6 +110,24 @@ public class MainActivity extends AppCompatActivity {
                         "Obrigado por usar o aplicativo.");
         builder.setPositiveButton("OK", null);
         builder.show();
+    }
+
+    private void shareListViaWhatsApp() {
+        StringBuilder message = new StringBuilder("Minha lista de compras:\n");
+        for (Product product : productList) {
+            message.append("- ").append(product.getName()).append(": ").append(product.getQuantity()).append(" unidades\n");
+        }
+
+        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+        shareIntent.setType("text/plain");
+        shareIntent.putExtra(Intent.EXTRA_TEXT, message.toString());
+        shareIntent.setPackage("com.whatsapp"); // Define o pacote do WhatsApp
+
+        try {
+            startActivity(shareIntent);
+        } catch (android.content.ActivityNotFoundException ex) {
+            Toast.makeText(this, "WhatsApp não está instalado.", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @SuppressLint({"DefaultLocale", "NotifyDataSetChanged"})

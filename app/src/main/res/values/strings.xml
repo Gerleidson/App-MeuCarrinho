@@ -3,5 +3,6 @@
     <string name="menu_options">Opções</string>
     <string name="menu_ordenar">Ordenar Lista</string>
     <string name="menu_compartilhar">Compartilhar</string>
+    <string name="menu_compartilharLista">Compartilhar Lista</string>
     <string name="menu_sobre">Sobre</string>
 </resources>

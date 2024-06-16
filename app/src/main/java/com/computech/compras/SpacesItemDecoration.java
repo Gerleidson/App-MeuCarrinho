@@ -1,6 +1,5 @@
 package com.computech.compras;
 
-import android.content.Context;
 import android.graphics.Rect;
 import android.view.View;
 
