@@ -19,7 +19,6 @@
             android:layout_width="157dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textColor="@color/black"
             android:text="Produto"
             android:textSize="14sp"
             tools:ignore="HardcodedText,InefficientWeight" />
@@ -27,28 +26,28 @@
         <TextView
             android:id="@+id/productQuantity"
             android:layout_width="25dp"
-            android:layout_height="24dp"
+            android:layout_height="match_parent"
             android:text="0"
-            android:textColor="@color/black"
+            android:gravity="center"
             android:textSize="11sp"
             tools:ignore="HardcodedText,RtlHardcoded,TextSizeCheck,VisualLintBounds" />
 
         <TextView
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
             android:id="@+id/productPriceCalculation"
-            android:layout_width="61dp"
-            android:layout_height="24dp"
             android:text="0.00"
-            android:textColor="@color/black"
             android:textSize="11sp"
+            android:gravity="center_vertical"
             tools:ignore="HardcodedText,TextSizeCheck,VisualLintBounds" />
 
         <TextView
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
             android:id="@+id/productPriceTotal"
-            android:layout_width="79dp"
-            android:layout_height="24dp"
             android:text="0.00"
             android:textSize="11sp"
-            android:textColor="@color/black"
+            android:gravity="center"
             tools:ignore="HardcodedText,TextSizeCheck,VisualLintBounds" />
 
         <ImageView

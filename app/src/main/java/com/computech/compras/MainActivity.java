@@ -166,17 +166,28 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    @SuppressLint("DefaultLocale")
     private void deleteProduct(int position) {
         Product product = productList.get(position);
-        double total = product.getQuantity() * product.getPrice();
 
-        totalAmount -= total; // Atualiza o valor total
-        totalTextView.setText(String.format("R$ %.2f", totalAmount));
+        // Cria um AlertDialog para confirmar a exclusão
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Confirmar exclusão");
+        builder.setMessage("Tem certeza que deseja excluir este item?");
+        builder.setPositiveButton("Sim", (dialog, which) -> {
+            double total = product.getQuantity() * product.getPrice();
 
-        productList.remove(position);
-        productAdapter.notifyItemRemoved(position);
+            totalAmount -= total; // Atualiza o valor total
+            totalTextView.setText(String.format("R$ %.2f", totalAmount));
+
+            productList.remove(position);
+            productAdapter.notifyItemRemoved(position);
+        });
+        builder.setNegativeButton("Não", null); // Botão de cancelar
+
+        // Mostra o AlertDialog
+        builder.show();
     }
+
 
     @SuppressLint({"DefaultLocale", "NotifyDataSetChanged"})
     private void clearAll() {

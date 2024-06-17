@@ -74,7 +74,7 @@
 
     <EditText
         android:id="@+id/editTextText3"
-        android:layout_width="107dp"
+        android:layout_width="101dp"
         android:layout_height="36dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="12dp"
@@ -91,9 +91,10 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="385dp"
-        android:layout_height="512dp"
+        android:layout_width="384dp"
+        android:layout_height="499dp"
         android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:background="@color/white"
         android:clipToPadding="false"
         android:padding="10dp"
@@ -105,6 +106,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextText3"
         tools:ignore="MissingConstraints"
         tools:itemCount="50" />
+
 
     <ImageView
         android:id="@+id/imageView2"
