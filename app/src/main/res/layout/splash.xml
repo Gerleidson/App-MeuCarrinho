@@ -16,18 +16,18 @@
 
     <ProgressBar
         android:id="@+id/progressBar"
-        android:layout_width="71dp"
-        android:layout_height="67dp"
+        android:layout_width="57dp"
+        android:layout_height="51dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="176dp"
         android:layout_marginTop="345dp"
-        android:layout_marginEnd="164dp"
-        android:layout_marginBottom="319dp"
+        android:layout_marginEnd="178dp"
+        android:layout_marginBottom="335dp"
         android:indeterminate="true"
-        android:indeterminateTint="@color/DarkRed" />
+        android:indeterminateTint="@color/Red" />
 
 
 </RelativeLayout>
