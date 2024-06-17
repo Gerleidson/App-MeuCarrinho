@@ -12,17 +12,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Compras"
         tools:targetApi="31">
+
         <activity
-            android:name=".MainActivity"
-            android:windowSoftInputMode="adjustPan|stateHidden"
-        android:exported="true">
+            android:name=".splash"
+            android:exported="true"
+            android:theme="@style/Theme.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".MainActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden"
+            android:exported="true">
+        </activity>
 
     </application>
 

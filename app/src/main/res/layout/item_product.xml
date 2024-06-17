@@ -19,6 +19,7 @@
             android:layout_width="157dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:textColor="@color/black"
             android:text="Produto"
             android:textSize="14sp"
             tools:ignore="HardcodedText,InefficientWeight" />
@@ -28,6 +29,7 @@
             android:layout_width="25dp"
             android:layout_height="24dp"
             android:text="0"
+            android:textColor="@color/black"
             android:textSize="11sp"
             tools:ignore="HardcodedText,RtlHardcoded,TextSizeCheck,VisualLintBounds" />
 
@@ -36,6 +38,7 @@
             android:layout_width="61dp"
             android:layout_height="24dp"
             android:text="0.00"
+            android:textColor="@color/black"
             android:textSize="11sp"
             tools:ignore="HardcodedText,TextSizeCheck,VisualLintBounds" />
 
@@ -45,6 +48,7 @@
             android:layout_height="24dp"
             android:text="0.00"
             android:textSize="11sp"
+            android:textColor="@color/black"
             tools:ignore="HardcodedText,TextSizeCheck,VisualLintBounds" />
 
         <ImageView
