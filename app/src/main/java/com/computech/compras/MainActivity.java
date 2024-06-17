@@ -6,8 +6,8 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
         productNameEditText = findViewById(R.id.editTextText);
         productQuantityEditText = findViewById(R.id.editTextText2);
         productPriceEditText = findViewById(R.id.editTextText3);
-        Button addButton = findViewById(R.id.button3);
-        Button clearButton = findViewById(R.id.button4);
+        ImageButton addButton = findViewById(R.id.imageButton);
+        ImageButton clearButton = findViewById(R.id.imageButton2);
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         totalTextView = findViewById(R.id.totalTextView);
 

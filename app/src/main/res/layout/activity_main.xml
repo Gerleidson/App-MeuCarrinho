@@ -20,15 +20,15 @@
 
     <TextView
         android:id="@+id/totalTextView"
-        android:layout_width="139dp"
-        android:layout_height="36dp"
+        android:layout_width="240dp"
+        android:layout_height="42dp"
         android:layout_marginTop="4dp"
         android:text="R$ 0.00"
         android:textColor="@color/white"
-        android:textSize="24sp"
+        android:textSize="26sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.941"
+        app:layout_constraintHorizontal_bias="0.091"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
         tools:ignore="HardcodedText,MissingConstraints,TextSizeCheck" />
@@ -55,11 +55,10 @@
 
     <EditText
         android:id="@+id/editTextText2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="91dp"
+        android:layout_height="36dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
         android:background="@drawable/edit_text_background"
         android:hint="Quantidade"
         android:inputType="number"
@@ -67,18 +66,18 @@
         android:textColor="@color/black"
         android:textColorHint="@color/black"
         android:textSize="15sp"
-        app:layout_constraintEnd_toStartOf="@id/editTextText3"
+        app:layout_constraintEnd_toStartOf="@+id/editTextText3"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/editTextText"
         tools:ignore="Autofill,HardcodedText,TouchTargetSizeCheck,VisualLintTextFieldSize" />
 
     <EditText
         android:id="@+id/editTextText3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_width="107dp"
+        android:layout_height="36dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="12dp"
         android:background="@drawable/edit_text_background"
         android:hint="Preço"
         android:inputType="numberDecimal"
@@ -86,54 +85,25 @@
         android:textColor="@color/black"
         android:textColorHint="@color/black"
         android:textSize="15sp"
-        app:layout_constraintEnd_toStartOf="@id/button3"
-        app:layout_constraintStart_toEndOf="@id/editTextText2"
-        app:layout_constraintTop_toBottomOf="@id/editTextText"
-        tools:ignore="Autofill,HardcodedText,TouchTargetSizeCheck,VisualLintTextFieldSize" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="95dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:backgroundTint="@color/DarkRed"
-        android:text="+"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextText"
-        tools:ignore="HardcodedText,TouchTargetSizeCheck" />
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="103dp"
-        android:layout_height="39dp"
-        android:backgroundTint="@color/DarkRed"
-        android:text="Limpar"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.951"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView"
-        app:layout_constraintVertical_bias="0.538"
-        tools:ignore="HardcodedText,TouchTargetSizeCheck" />
+        app:layout_constraintEnd_toStartOf="@+id/imageButton"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText"
+        tools:ignore="Autofill,HardcodedText,MissingConstraints,TouchTargetSizeCheck,VisualLintTextFieldSize" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="380dp"
-        android:layout_height="478dp"
-        android:layout_marginTop="45dp"
+        android:layout_width="385dp"
+        android:layout_height="512dp"
+        android:layout_marginTop="20dp"
         android:background="@color/white"
         android:clipToPadding="false"
         android:padding="10dp"
         android:paddingTop="@dimen/item_space"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editTextText3"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText3"
+        tools:ignore="MissingConstraints"
         tools:itemCount="50" />
 
     <ImageView
@@ -142,11 +112,35 @@
         android:layout_height="63dp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.446"
+        app:layout_constraintHorizontal_bias="0.468"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@mipmap/ic_launcher"
         tools:ignore="ContentDescription" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="67dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="88dp"
+        android:backgroundTint="@color/DarkRed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextText"
+        app:srcCompat="@drawable/ic_add"
+        tools:ignore="ContentDescription,HardcodedText,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="67dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/DarkRed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextText"
+        app:srcCompat="@drawable/ic_clear"
+        tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
