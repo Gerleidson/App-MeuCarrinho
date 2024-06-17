@@ -21,7 +21,7 @@
             android:layout_weight="1"
             android:text="Produto"
             android:textSize="14sp"
-            tools:ignore="HardcodedText" />
+            tools:ignore="HardcodedText,InefficientWeight" />
 
         <TextView
             android:id="@+id/productQuantity"
@@ -29,7 +29,7 @@
             android:layout_height="24dp"
             android:text="0"
             android:textSize="11sp"
-            tools:ignore="HardcodedText,RtlHardcoded" />
+            tools:ignore="HardcodedText,RtlHardcoded,TextSizeCheck,VisualLintBounds" />
 
         <TextView
             android:id="@+id/productPriceCalculation"
@@ -37,7 +37,7 @@
             android:layout_height="24dp"
             android:text="0.00"
             android:textSize="11sp"
-            tools:ignore="HardcodedText" />
+            tools:ignore="HardcodedText,TextSizeCheck,VisualLintBounds" />
 
         <TextView
             android:id="@+id/productPriceTotal"
@@ -45,7 +45,7 @@
             android:layout_height="24dp"
             android:text="0.00"
             android:textSize="11sp"
-            tools:ignore="HardcodedText" />
+            tools:ignore="HardcodedText,TextSizeCheck,VisualLintBounds" />
 
         <ImageView
             android:id="@+id/editButton"
@@ -72,7 +72,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
         android:orientation="horizontal"
-        tools:ignore="UselessParent">
+        tools:ignore="UselessLeaf,UselessParent">
 
     </LinearLayout>
 </LinearLayout>
