@@ -18,7 +18,6 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -30,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private List<Product> productList;
     private double totalAmount = 0;
     private int editingPosition = -1;
+    private ProductRepository productRepository;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +44,10 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         totalTextView = findViewById(R.id.totalTextView);
 
-        productList = new ArrayList<>();
+        productRepository = new ProductRepository(this);
+        productRepository.open();
+
+        productList = productRepository.getAllProducts();
         productAdapter = new ProductAdapter(productList, new ProductAdapter.OnItemClickListener() {
             @Override
             public void onEditClick(int position) {
@@ -69,6 +72,14 @@ public class MainActivity extends AppCompatActivity {
 
         int space = getResources().getDimensionPixelSize(R.dimen.item_space);
         recyclerView.addItemDecoration(new SpacesItemDecoration(space));
+
+        updateTotalAmount();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        productRepository.close();
     }
 
     @Override
@@ -148,11 +159,15 @@ public class MainActivity extends AppCompatActivity {
                 Product previousProduct = productList.get(editingPosition);
                 double previousTotal = previousProduct.getQuantity() * previousProduct.getPrice();
 
+                product.setId(previousProduct.getId());
+                productRepository.updateProduct(product);
+
                 productList.set(editingPosition, product);
                 totalAmount = totalAmount - previousTotal + total; // Atualiza o valor total
                 editingPosition = -1;
             } else {
                 // Adiciona um novo produto
+                productRepository.addProduct(product);
                 productList.add(product);
                 totalAmount += total; // Atualiza o valor total
             }
@@ -166,6 +181,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @SuppressLint("DefaultLocale")
     private void deleteProduct(int position) {
         Product product = productList.get(position);
 
@@ -175,6 +191,8 @@ public class MainActivity extends AppCompatActivity {
         builder.setMessage("Tem certeza que deseja excluir este item?");
         builder.setPositiveButton("Sim", (dialog, which) -> {
             double total = product.getQuantity() * product.getPrice();
+
+            productRepository.deleteProduct(product.getId());
 
             totalAmount -= total; // Atualiza o valor total
             totalTextView.setText(String.format("R$ %.2f", totalAmount));
@@ -187,7 +205,6 @@ public class MainActivity extends AppCompatActivity {
         // Mostra o AlertDialog
         builder.show();
     }
-
 
     @SuppressLint({"DefaultLocale", "NotifyDataSetChanged"})
     private void clearAll() {
@@ -213,5 +230,14 @@ public class MainActivity extends AppCompatActivity {
 
         // Atualiza o adaptador da RecyclerView
         productAdapter.notifyDataSetChanged();
+    }
+
+    @SuppressLint("DefaultLocale")
+    private void updateTotalAmount() {
+        totalAmount = 0;
+        for (Product product : productList) {
+            totalAmount += product.getQuantity() * product.getPrice();
+        }
+        totalTextView.setText(String.format("R$ %.2f", totalAmount));
     }
 }
