@@ -23,9 +23,9 @@ Meu Carrinho é um aplicativo Android para gerenciar sua lista de compras, permi
 2. Abra no Android Studio.
 3. Compile e execute no dispositivo/emulador.
 
-##Contato
+## Contato
 Desenvolvedor: Gerleidson A. Bomfim
 Email: gerleidson.bomfim@gmail.com
 
-##Licença
+## Licença
 Este projeto está licenciado sob a Licença MIT - veja o arquivo LICENSE para detalhes.
